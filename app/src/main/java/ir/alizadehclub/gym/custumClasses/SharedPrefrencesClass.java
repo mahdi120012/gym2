@@ -1,4 +1,4 @@
-package ir.alizadehclub.gym;
+package ir.alizadehclub.gym.custumClasses;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -25,4 +25,8 @@ public class SharedPrefrencesClass {
         return prefs.getString(key,null);
     }
 
+    public static void clearData(Context c){
+        SharedPreferences prefs = context.getSharedPreferences(PREFS_NAME, 0);
+        prefs.edit().clear().apply();
+    }
 }

@@ -1,8 +1,11 @@
-package ir.alizadehclub.gym
+package ir.alizadehclub.gym.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import ir.alizadehclub.gym.R
+import ir.alizadehclub.gym.SendRecive
+import ir.alizadehclub.gym.custumClasses.SharedPrefrencesClass
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -11,10 +14,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-        val sharedPrefrencesClass = SharedPrefrencesClass(this)
 
-        var phoneNumber = SharedPrefrencesClass.getUserProfile("phone_number")
-        var password = SharedPrefrencesClass.getUserProfile("password")
+        val sharedPrefrencesClass =
+            SharedPrefrencesClass(this)
+
+        var phoneNumber =
+            SharedPrefrencesClass.getUserProfile("phone_number")
+        var password =
+            SharedPrefrencesClass.getUserProfile("password")
 
         if (phoneNumber != null && password != null ){
            var senderRecive = SendRecive()

@@ -4,39 +4,407 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainUserProfile">
+    android:background="#fafafa"
+    tools:context=".activities.MainUserProfile">
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:srcCompat="@mipmap/ic_launcher_round" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:fontFamily="@font/iranyekanregular"
-        android:text="مشخصات"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical">
 
-    <TextView
-        android:fontFamily="@font/iranyekanregular"
-        android:textSize="20sp"
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="حسن علوی"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+            <TextView
+                android:id="@+id/txAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:fontFamily="@font/iranyekanregular"
+                android:text="آدرس"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/txAddress3"
+                app:layout_constraintEnd_toStartOf="@+id/txAddress3"
+                app:layout_constraintTop_toTopOf="@+id/txAddress3" />
+
+            <TextView
+                android:id="@+id/txTarikhOzviyat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:fontFamily="@font/iranyekanregular"
+                android:text="تاریخ عضویت"
+                android:textDirection="ltr"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/txTarikhOzviyat2"
+                app:layout_constraintEnd_toStartOf="@+id/txTarikhOzviyat2"
+                app:layout_constraintTop_toTopOf="@+id/txTarikhOzviyat2" />
+
+            <TextView
+                android:id="@+id/txPhoneNumber2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:fontFamily="@font/iranyekanwebbold"
+                android:text="شماره همراه:"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+                app:layout_constraintEnd_toStartOf="@+id/imageView4"
+                app:layout_constraintTop_toTopOf="@+id/imageView4" />
+
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="27dp"
+                android:layout_height="27dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="@+id/imageView6"
+                app:layout_constraintStart_toStartOf="@+id/imageView6"
+                app:layout_constraintTop_toBottomOf="@+id/imageView6"
+                app:srcCompat="@drawable/ic_location_on_blue_400_24dp" />
+
+            <TextView
+                android:id="@+id/txAddress3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:fontFamily="@font/iranyekanwebbold"
+                android:text="آدرس:"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView7"
+                app:layout_constraintEnd_toStartOf="@+id/imageView7"
+                app:layout_constraintTop_toTopOf="@+id/imageView7" />
+
+            <TextView
+                android:id="@+id/txPhoneNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:fontFamily="@font/iranyekanregular"
+                android:textSize="14sp"
+                android:text="شماره همراه"
+                app:layout_constraintBottom_toBottomOf="@+id/txPhoneNumber2"
+                app:layout_constraintEnd_toStartOf="@+id/txPhoneNumber2"
+                app:layout_constraintTop_toTopOf="@+id/txPhoneNumber2" />
+
+            <TextView
+                android:id="@+id/txTarikhOzviyat2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:fontFamily="@font/iranyekanwebbold"
+                android:text="تاریخ عضویت:"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView6"
+                app:layout_constraintEnd_toStartOf="@+id/imageView6"
+                app:layout_constraintTop_toTopOf="@+id/imageView6" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="27dp"
+                android:layout_height="27dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="28dp"
+                android:layout_marginRight="28dp"
+                app:layout_constraintEnd_toEndOf="@+id/constraintLayout2"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
+                app:srcCompat="@drawable/ic_phone_android_blue_400_24dp" />
+
+            <TextView
+                android:id="@+id/txVaziyat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:fontFamily="@font/iranyekanregular"
+                android:text="وضعیت"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/txVaziyat2"
+                app:layout_constraintEnd_toStartOf="@+id/txVaziyat2"
+                app:layout_constraintTop_toTopOf="@+id/txVaziyat2" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="27dp"
+                android:layout_height="27dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="@+id/imageView5"
+                app:layout_constraintStart_toStartOf="@+id/imageView5"
+                app:layout_constraintTop_toBottomOf="@+id/imageView5"
+                app:srcCompat="@drawable/ic_date_range_blue_400_24dp" />
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="27dp"
+                android:layout_height="27dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="@+id/imageView2"
+                app:layout_constraintStart_toStartOf="@+id/imageView2"
+                app:layout_constraintTop_toBottomOf="@+id/imageView2"
+                app:srcCompat="@drawable/ic_date_range_blue_400_24dp" />
+
+            <TextView
+                android:id="@+id/txTarikhTavallod"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:fontFamily="@font/iranyekanregular"
+                android:text="تاریخ تولد"
+                android:textDirection="ltr"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/txTarikhTavallod2"
+                app:layout_constraintEnd_toStartOf="@+id/txTarikhTavallod2"
+                app:layout_constraintTop_toTopOf="@+id/txTarikhTavallod2" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="27dp"
+                android:layout_height="27dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="@+id/imageView3"
+                app:layout_constraintStart_toStartOf="@+id/imageView3"
+                app:layout_constraintTop_toBottomOf="@+id/imageView3"
+                app:srcCompat="@drawable/ic_perm_identity_blue_400_24dp" />
+
+            <ImageView
+                android:id="@+id/imageView8"
+                android:layout_width="27dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="32dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/imageView7"
+                app:layout_constraintStart_toStartOf="@+id/imageView7"
+                app:layout_constraintTop_toBottomOf="@+id/imageView7"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/ic_supervisor_account_blue_400_24dp" />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="27dp"
+                android:layout_height="27dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="@+id/imageView4"
+                app:layout_constraintStart_toStartOf="@+id/imageView4"
+                app:layout_constraintTop_toBottomOf="@+id/imageView4"
+                app:srcCompat="@drawable/ic_perm_contact_calendar_blue_400_24dp" />
+
+            <TextView
+                android:id="@+id/txCodeMeli2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:fontFamily="@font/iranyekanwebbold"
+                android:text="کدملی:"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+                app:layout_constraintEnd_toStartOf="@+id/imageView2"
+                app:layout_constraintTop_toTopOf="@+id/imageView2" />
+
+            <TextView
+                android:id="@+id/txParentName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:fontFamily="@font/iranyekanregular"
+                android:text="علی"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/txAddress4"
+                app:layout_constraintEnd_toStartOf="@+id/txAddress4"
+                app:layout_constraintTop_toTopOf="@+id/txAddress4" />
+
+            <TextView
+                android:id="@+id/txAddress4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:fontFamily="@font/iranyekanwebbold"
+                android:text="نام پدر:"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView8"
+                app:layout_constraintEnd_toStartOf="@+id/imageView8"
+                app:layout_constraintTop_toTopOf="@+id/imageView8" />
+
+            <TextView
+                android:id="@+id/txVaziyat2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:fontFamily="@font/iranyekanwebbold"
+                android:text="وضعیت:"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView5"
+                app:layout_constraintEnd_toStartOf="@+id/imageView5"
+                app:layout_constraintTop_toTopOf="@+id/imageView5" />
+
+            <TextView
+                android:id="@+id/txTarikhTavallod2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:fontFamily="@font/iranyekanwebbold"
+                android:text="تاریخ تولد:"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+                app:layout_constraintEnd_toStartOf="@+id/imageView3"
+                app:layout_constraintTop_toTopOf="@+id/imageView3" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout"
+                android:layout_width="0dp"
+                android:layout_height="280dp"
+                android:background="#0bcae4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/imgProfile"
+                    android:layout_width="140dp"
+                    android:layout_height="140dp"
+                    android:layout_marginTop="28dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/no_image"
+                    app:civ_border_color="#15B6CC"
+                    app:civ_border_width="1dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@mipmap/ic_launcher_round" />
+
+
+                <TextView
+                    android:id="@+id/txName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/iranyekanregular"
+                    android:text="نام"
+                    android:textColor="#ffffff"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="@+id/imgProfile"
+                    app:layout_constraintStart_toStartOf="@+id/imgProfile"
+                    app:layout_constraintTop_toBottomOf="@+id/imgProfile" />
+
+                <ImageView
+                    android:id="@+id/imgMenu"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="38dp"
+                    android:layout_marginRight="38dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/menu" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout2"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginRight="24dp"
+                android:background="@drawable/round_background_with_shadow"
+                app:layout_constraintBottom_toBottomOf="@+id/constraintLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+                <TextView
+                    android:id="@+id/txEtebar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/iranyekanregular"
+                    android:text="اعتبار"
+                    android:textColor="#3aab8d"
+                    android:textDirection="ltr"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="@+id/textView4"
+                    app:layout_constraintStart_toStartOf="@+id/textView4"
+                    app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:fontFamily="@font/iranyekanregular"
+                    android:text="اعتبار"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView3"
+                    app:layout_constraintEnd_toStartOf="@+id/textView3"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/txEtebar"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/textView3" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/iranyekanregular"
+                    android:text="کد عضویت"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/textView4"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/txUserId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/iranyekanregular"
+                    android:text="یوزر آیدی"
+
+                    android:textColor="#3aab8d"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="@+id/textView3"
+                    app:layout_constraintStart_toStartOf="@+id/textView3"
+                    app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/txCodeMeli"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:fontFamily="@font/iranyekanregular"
+                android:text="کدملی"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/txCodeMeli2"
+                app:layout_constraintEnd_toStartOf="@+id/txCodeMeli2"
+                app:layout_constraintTop_toTopOf="@+id/txCodeMeli2" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -27,6 +27,49 @@ public class SendRecive {
     Context c;
 
 
+    public void loadShahriyeh(final Context c, String clubId, final TextView txShahriyeh) {
+
+
+        final String url = "http://alizadehclub.ir/option/getOptionMobile/?club_id="+clubId;
+
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url,
+                null, new Response.Listener<JSONObject>() {
+
+            @Override
+            public void onResponse(JSONObject response) {
+
+
+                if (response.length() <= 0) {
+                    //Toast.makeText(c, "اطلاعاتی موجود نیست.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                String shahriyeh = null;
+
+                for (int i = 0; i < response.length(); i++) {
+                    try {
+                        JSONObject jsonObject = new JSONObject(response.toString());
+                        shahriyeh = jsonObject.getString("tituion");
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+
+                txShahriyeh.setText(new EnglishNumberToPersian().convert(shahriyeh) + " تومان");
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+                Toast.makeText(c, "دسترسی به اینترنت موجود نیست!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        MySingleton.getInstance(c).addToRequestQueue(jsonObjectRequest);
+    }
+
+
     public void loadDarbareyeBshgah(final Context c, String clubId, final TextView txAddress,
                                     final TextView txPhone,final TextView txShahriyeh,
                                     final TextView txDarbareyeBashgah) {

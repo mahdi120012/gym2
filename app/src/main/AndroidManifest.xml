@@ -12,10 +12,23 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activities.MainPoshtibani"></activity>
+
+        <activity android:name=".activities.Payment"/>
+        <activity android:name=".activities.AfterPayment"/>
+        <activity android:name=".activities.MainPay"/>
+        <activity android:name=".activities.MainPoshtibani" />
         <activity android:name=".activities.MainAboutMe" />
         <activity android:name=".activities.MainEtelaatBashgah" />
-        <activity android:name=".activities.MainUserProfile" android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.thefinestartist.finestwebview.FinestWebViewActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="sensor"
+            android:theme="@style/FinestWebViewTheme.Light" />
+
+        <activity
+            android:name=".activities.MainUserProfile"
+            android:screenOrientation="portrait" />
         <activity android:name=".activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

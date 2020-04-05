@@ -4,7 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.MainEtelaatBashgah">
+    tools:context=".activities.MainEtelaatBashgah"
+    android:layoutDirection="ltr"
+    android:textDirection="rtl"
+    >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout3"
@@ -50,8 +53,6 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
             android:layout_marginBottom="12dp"
             android:fontFamily="@font/iranyekanregular"
             android:gravity="right"
@@ -59,7 +60,7 @@
             android:textColor="#225E90"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/textView2"
+            app:layout_constraintEnd_toEndOf="@+id/txShahriyeh"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/textView2" />
 
@@ -134,15 +135,13 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
             android:fontFamily="@font/iranyekanregular"
             android:gravity="right"
             android:text="شهریه"
             android:textColor="#225E90"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="@+id/textView7"
-            app:layout_constraintEnd_toStartOf="@+id/textView7"
+            app:layout_constraintEnd_toEndOf="@+id/txPhone"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/textView7" />
 
@@ -161,7 +160,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="379dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
@@ -198,6 +197,7 @@
             android:gravity="right"
             android:text="درباره باشگاه"
             android:textSize="14sp"
+            android:justificationMode="inter_word"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/textView6"
             app:layout_constraintStart_toStartOf="parent"

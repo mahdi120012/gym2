@@ -5,7 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#fafafa"
-    tools:context=".activities.MainUserProfile">
+    tools:context=".activities.MainUserProfile"
+    android:layoutDirection="ltr"
+    android:textDirection="rtl"
+    >
 
 
     <androidx.core.widget.NestedScrollView
@@ -93,8 +96,8 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
                 android:fontFamily="@font/iranyekanregular"
-                android:textSize="14sp"
                 android:text="شماره همراه"
+                android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="@+id/txPhoneNumber2"
                 app:layout_constraintEnd_toStartOf="@+id/txPhoneNumber2"
                 app:layout_constraintTop_toTopOf="@+id/txPhoneNumber2" />
@@ -183,14 +186,11 @@
             <ImageView
                 android:id="@+id/imageView8"
                 android:layout_width="27dp"
-                android:layout_height="wrap_content"
+                android:layout_height="27dp"
                 android:layout_marginTop="16dp"
-                android:layout_marginBottom="32dp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/imageView7"
                 app:layout_constraintStart_toStartOf="@+id/imageView7"
                 app:layout_constraintTop_toBottomOf="@+id/imageView7"
-                app:layout_constraintVertical_bias="0.0"
                 app:srcCompat="@drawable/ic_supervisor_account_blue_400_24dp" />
 
             <ImageView
@@ -230,6 +230,19 @@
                 app:layout_constraintTop_toTopOf="@+id/txAddress4" />
 
             <TextView
+                android:id="@+id/txShahriyeh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:fontFamily="@font/iranyekanregular"
+                android:text="0"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/txAddress2"
+                app:layout_constraintEnd_toStartOf="@+id/txAddress2"
+                app:layout_constraintTop_toTopOf="@+id/txAddress2" />
+
+            <TextView
                 android:id="@+id/txAddress4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -241,6 +254,19 @@
                 app:layout_constraintBottom_toBottomOf="@+id/imageView8"
                 app:layout_constraintEnd_toStartOf="@+id/imageView8"
                 app:layout_constraintTop_toTopOf="@+id/imageView8" />
+
+            <TextView
+                android:id="@+id/txAddress2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:fontFamily="@font/iranyekanwebbold"
+                android:text="شهریه:"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView11"
+                app:layout_constraintEnd_toStartOf="@+id/imageView11"
+                app:layout_constraintTop_toTopOf="@+id/imageView11" />
 
             <TextView
                 android:id="@+id/txVaziyat2"
@@ -310,8 +336,8 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_marginTop="8dp"
-                    android:layout_marginEnd="38dp"
-                    android:layout_marginRight="38dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@drawable/menu" />
@@ -403,6 +429,32 @@
                 app:layout_constraintBottom_toBottomOf="@+id/txCodeMeli2"
                 app:layout_constraintEnd_toStartOf="@+id/txCodeMeli2"
                 app:layout_constraintTop_toTopOf="@+id/txCodeMeli2" />
+
+            <TextView
+                android:id="@+id/txPardakhtShahriye"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:fontFamily="@font/iranyekanwebbold"
+                android:text="(پرداخت شهریه)"
+                android:textColor="#03A9F4"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/txShahriyeh"
+                app:layout_constraintEnd_toStartOf="@+id/txShahriyeh"
+                app:layout_constraintTop_toTopOf="@+id/txShahriyeh" />
+
+            <ImageView
+                android:id="@+id/imageView11"
+                android:layout_width="27dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="46dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/imageView8"
+                app:layout_constraintStart_toStartOf="@+id/imageView8"
+                app:layout_constraintTop_toBottomOf="@+id/imageView8"
+                app:srcCompat="@drawable/ic_payment_black_24dp" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
